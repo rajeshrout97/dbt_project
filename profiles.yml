@@ -1,0 +1,31 @@
+dbt_project:
+  outputs:
+    dev:
+      account: kba63133
+      database: DEMO_DB
+      password: Mahakal@1
+      role: GLOBAL_DATA_ENGINEER_FR
+      schema: DYNAMO_DB_DATA_DBT
+      threads: 1
+      type: snowflake
+      user: Abhishek.Shrivastava
+      warehouse: GLOBAL_DATA_ENGINEER_WH
+  target: dev
+my-snowflake-db:
+  outputs:
+    prod:
+      account: kba63133
+      client_session_keep_alive: false
+      connect_retries: 0
+      connect_timeout: 10
+      database: GLOBAL_REPORTING_DB
+      password: Mahakal@1
+      retry_all: false
+      retry_on_database_errors: false
+      role: GLOBAL_DATA_ENGINEER_FR
+      schema: GLOBAL_BL_SCMA
+      threads: 2
+      type: snowflake
+      user: Abhishek.Shrivastava
+      warehouse: GLOBAL_DATA_ENGINEER_WH
+  target: dev
