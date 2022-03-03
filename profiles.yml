@@ -1,6 +1,6 @@
 dbt_project:
   outputs:
-    dev:
+    prod:
       account: kba63133
       database: DEMO_DB
       password: Mahakal@1
@@ -13,17 +13,17 @@ dbt_project:
   target: dev
 my-snowflake-db:
   outputs:
-    prod:
+    dev:
       account: kba63133
       client_session_keep_alive: false
       connect_retries: 0
       connect_timeout: 10
-      database: GLOBAL_REPORTING_DB
+      database: GLOBAL_LOAD_DB
       password: Mahakal@1
       retry_all: false
       retry_on_database_errors: false
       role: GLOBAL_DATA_ENGINEER_FR
-      schema: GLOBAL_BL_SCMA
+      schema: TRANSFORMED_DYNAMO_SCMA
       threads: 2
       type: snowflake
       user: Abhishek.Shrivastava
